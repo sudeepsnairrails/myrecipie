@@ -1,6 +1,28 @@
 Rails.application.routes.draw do
+  get 'recipies/index'
+
+  get 'recipies/create'
+
+  get 'recipies/new'
+
+  get 'recipies/edit'
+
+  get 'recipies/show'
+
+  get 'recipies/update'
+
+  get 'recipies/destroy'
+
   root 'pages#home'
   get 'pages/home' => 'pages#home'
+  #get '/recipies', to: 'recipies#index'
+  #get '/recipies/new', to: 'recipies#new', as: 'new_recipie'
+  #post '/recipies', to: 'recipies#create'
+  #get '/recipies/:id/edit', to: 'recipies#edit', as: 'edit_recipie'
+  #patch '/recipies/:id', to: 'recipies#update'
+ # get 'recipies/:id', to: 'recipies#show', as: 'recipie'
+  #delete '/recipies/:id', to: 'recipes#destroy'
+resources :recipies
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

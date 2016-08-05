@@ -1,0 +1,19 @@
+<%= render 'shared/page_title', title: "All Recipies"%>
+<hr/>
+<% @recipies.each do |recipie| %>
+<div class="row">
+  <div class="col-md-2">
+<section class="chef-info center">
+<%= gravathar_for recipie.chef, size: 100%>
+  <h5>Chef name:<%=recipie.chef.chefname%></h5>
+</section>
+  </div>
+<div class="col-lg-8 well">
+  <h4><%=link_to recipie.name, recipy_path(recipie)%></h4>
+  <p><%= recipie.summary%></p>
+  <span class="quiet"><small><%=time_ago_in_words(recipie.created_at)%> ago</small></span>
+</div>
+
+</div>
+<hr/>
+<% end %>

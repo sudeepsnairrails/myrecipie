@@ -9,18 +9,19 @@
 <body>
 <header class="navbar navbar-fixed-top navbar-default">
   <div class="container">
-    <%= link_to "MyRecipies", "", class: "btn btn-lg btn-success", id: "logo" %>
+    <%= link_to "MyRecipies", root_path, class: "btn btn-lg btn-success", id: "logo" %>
     <div class="nav-item">
-      <%= link_to "item1", "", class: "btn btn-default btn-warning" %>
+      <%= link_to "Create new recipie", recipies_new_path, class: "btn btn-default btn-warning" %>
       <%= link_to "item2", "", class: "btn btn-default btn-warning" %>
       <%= link_to "item3", "", class: "btn btn-default btn-warning" %>
     </div>
   </div>
 </header>
+<%=render 'layouts/messages'%>
 <div class="container">
   <%= yield %>
 </div>
-
+<%=render 'layouts/footer'%>
 
 </body>
 </html>

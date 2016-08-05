@@ -1,0 +1,26 @@
+<% if @recipie.errors.any? %>
+    <div class="row">
+      <div class="alert alert-danger col-md-8 col-md-offset-2">
+        <h5>Please correct the following errors:</h5>
+        <ul>
+          <% @recipie.errors.full_messages.each do |msg|%>
+              <li><%= msg %></li>
+          <%end%>
+        </ul>
+      </div>
+    </div>
+<%end%>
+
+<div class="row">
+  <div class="well col-md-8 col-md-offset-2">
+    <%= form_for @recipie do |f| %>
+        <%= f.label :Name %>
+        <%= f.text_field :name %>
+        <%= f.label :Summary %>
+        <%= f.text_field :summary %>
+        <%= f.label :Description %>
+        <%= f.text_area :description, rows:10 %>
+        <%= f.submit(@recipie.new_record? ? 'Create Recipie' : 'Edit Recipie',class:"btn btn-success") %>
+    <% end %>
+  </div>
+</div>

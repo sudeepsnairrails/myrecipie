@@ -1,0 +1,20 @@
+<%= render 'shared/page_title', title: @recipie.name%>
+  <div class="row">
+    <div class="col-md-4 pull-right center">
+      <%= gravathar_for(@recipie.chef,size:200)%>
+        <p>
+          <h5>Brought to you by: <%=@recipie.chef.chefname%></h5>
+        </p>
+    </div>
+    <div class="col-md-8">
+      <%= link_to "Edit recipie", edit_recipy_path(@recipie), class:"btn btn-success pull-right"%>
+      <h3><%= @recipie.summary %></h3>
+      <div class="well">
+        <p>
+          <strong>Steps:</strong>
+        </p>
+        <%=simple_format(@recipie.description)%>
+      </div>
+    </div>
+  </div>
+<h5><%= link_to "Return to Recipies page",recipies_path, class:"btn btn-warning btn-small" %></h5>
